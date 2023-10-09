@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import { sequelize } from '../db/db_config.js';
 
-export const Admin = sequelize.define('Admin', {
+const Admin = sequelize.define('Admin', {
   username: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -12,3 +12,5 @@ export const Admin = sequelize.define('Admin', {
     allowNull: false,
   },
 });
+
+export default Admin;

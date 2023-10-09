@@ -1,6 +1,13 @@
 import { Router } from 'express';
-import { adminController } from '../controllers/adminController.js';
 import { authMiddleware } from '../middleware/authMiddleware.js';
+import { postController } from '../controllers/postController.js';
 
 export const postRouter = new Router();
-postRouter.get('/', authMiddleware, adminController.createAdmin);
+postRouter.get('/getUniques', postController.getUniquesPosts);
+postRouter.get('/getThreeLast', postController.getThreeLastPost);
+postRouter.get('/getAllPosts', postController.getAllPosts);
+
+postRouter.get('/:id', authMiddleware, postController.getPost);
+postRouter.post('/', authMiddleware, postController.createPost);
+postRouter.patch('/:id', authMiddleware, postController.updatePost);
+postRouter.delete('/:id', authMiddleware, postController.deletePost);
