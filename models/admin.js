@@ -1,7 +1,7 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../db/db_config.js');
+import { DataTypes } from 'sequelize';
+import { sequelize } from '../db/db_config.js';
 
-const Admin = sequelize.define('Admin', {
+export const Admin = sequelize.define('Admin', {
   username: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -12,5 +12,3 @@ const Admin = sequelize.define('Admin', {
     allowNull: false,
   },
 });
-
-module.exports = Admin;
