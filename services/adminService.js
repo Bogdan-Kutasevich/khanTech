@@ -1,4 +1,4 @@
-import { Admin } from '../models/admin.js';
+import Admin from '../models/admin.js';
 
 class AdminService {
   async createAdmin(username, hash) {
