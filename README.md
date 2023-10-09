@@ -1,6 +1,6 @@
 Test app with express.
 
-to up this up:
+to up this app:
 1. rename .env.example to .env
 2. config .env with variables
 3. in the app directory run command docker-compose up -or docker compose up -d
