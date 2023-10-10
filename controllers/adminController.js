@@ -33,7 +33,19 @@ class AdminController {
         return;
       }
       const jwt = generateJwt(admin.id, admin.username);
-      res.json({ status: 'ok', message: 'login successfully', jwt });
+      res.status(200).json({ status: 'ok', message: 'login successfully', jwt });
+    } catch (error) {
+      res.status(500).json(error.message);
+    }
+  }
+
+  async isAuth(req, res) {
+    try {
+      if (!req.admin.username) {
+        res.status(400).json('unauthorized');
+        return;
+      }
+      res.status(200).json({ status: 'ok', message: 'successfully', authorized: true });
     } catch (error) {
       res.status(500).json(error.message);
     }
