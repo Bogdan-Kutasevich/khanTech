@@ -128,7 +128,7 @@ class PostController {
     try {
       const page = req.query.page || 1;
       const allPosts = await postService.getAllPosts(page);
-      if (allPosts.length === 0) {
+      if (allPosts.count === 0) {
         res.status(400).json('posts does not exist');
         return;
       }

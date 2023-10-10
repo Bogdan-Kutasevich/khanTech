@@ -76,11 +76,13 @@ class PostService {
   async getAllPosts(page) {
     try {
       const perPage = 6;
-      return await Post.findAll({
+      const posts = await Post.findAll({
         limit: perPage,
         offset: (page - 1) * perPage,
         order: [['createdAt', 'DESC']],
       });
+      const count = await Post.findAll();
+      return { posts, count: count.length };
     } catch (error) {
       return false;
     }
