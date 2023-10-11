@@ -50,6 +50,16 @@ class AdminController {
       res.status(500).json(error.message);
     }
   }
+
+  async getAdminById(req, res) {
+    try {
+      const adminId = req.params.id;
+      const admin = await adminService.findAdminById(adminId);
+      res.status(200).json({ status: 'ok', message: 'successfully', adminName: admin.username });
+    } catch (error) {
+      res.status(500).json(error.message);
+    }
+  }
 }
 
 export const adminController = new AdminController();

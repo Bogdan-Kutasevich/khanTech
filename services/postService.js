@@ -50,7 +50,7 @@ class PostService {
         order: Sequelize.literal('RAND()'),
       });
 
-      return [randomPost, uniquePost];
+      return { randomPost, uniquePost };
     } catch (error) {
       return false;
     }

@@ -16,6 +16,14 @@ class AdminService {
       return false;
     }
   }
+
+  async findAdminById(id) {
+    try {
+      return await Admin.findOne({ where: { id } });
+    } catch (error) {
+      return false;
+    }
+  }
 }
 
 export const adminService = new AdminService();

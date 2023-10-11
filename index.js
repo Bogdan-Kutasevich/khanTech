@@ -9,7 +9,7 @@ import { uploadRouter } from './router/uploadRouter.js';
 
 const app = express();
 app.use(express.static('public/uploads'));
-app.use(cors({ origin: 'http://localhost:3002' }));
+app.use(cors({ origin: ['http://localhost:3002', 'http://localhost:3000'] }));
 app.use(express.json());
 app.use('/admin', adminRouter);
 app.use('/post', postRouter);

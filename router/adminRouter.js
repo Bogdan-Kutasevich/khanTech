@@ -6,3 +6,4 @@ export const adminRouter = new Router();
 adminRouter.post('/', adminController.createAdmin);
 adminRouter.post('/log-in', adminController.logIn);
 adminRouter.get('/isAuth', authMiddleware, adminController.isAuth);
+adminRouter.get('/:id', adminController.getAdminById);
